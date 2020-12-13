@@ -3,6 +3,32 @@
 
 using namespace std;
 
+/*
+ * Input: n
+ * Output: prints 1 to n in square spiral. To print any array, get the array, and spiral the index to have the same effect
+ * Limitation: n<100
+ * Example:
+
+Enter n: 1
+1
+
+
+Enter n: 4
+
+ 	1	2
+ 	4	3
+
+Enter n: 10
+
+7	8	9	10
+6	1	2
+5	4	3
+
+
+Enter n: 0
+
+ */
+
 bool lookRight(char dir, int x, int y, int mat[][10]) {
 	switch (dir) {
 	case 'e':
@@ -29,13 +55,14 @@ char turn(char dir) {
 	}
 }
 
+
 int spiralIt() {
 	int n=1;
 	cout << "\nEnter n: ";
 	cin >> n;
 	while (n != 0) {
 
-		int mat[10][10];
+		int mat[10][10]; // increase the index range to increase n range
 		for (int i = 0; i < 10; i++)
 			for (int j = 0; j < 10; j++) {
 				mat[i][j] = 0;
@@ -77,4 +104,9 @@ int spiralIt() {
 		cout << "\nEnter n: ";
 		cin >> n;
 	}
+}
+
+int main(){
+	spiralIt();
+	return 0;
 }
